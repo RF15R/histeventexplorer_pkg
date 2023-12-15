@@ -7,8 +7,7 @@ sphinx:
 python:
   version: 3.11
 
-build:
-  image: 'latest'  # Use 'latest' or 'stable'
+
 
 
 
