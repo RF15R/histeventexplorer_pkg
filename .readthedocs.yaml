@@ -1,22 +1,31 @@
 # .readthedocs.yaml
-# Read the Docs configuration file
-# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
-
 # Required
 version: 2
 
 # Build documentation with Sphinx
 sphinx:
-  # Path to the directory containing conf.py relative to the root of the project
   configuration: docs/conf.py
 
 # Set the version of Python
 python:
   version: 3.11
 
+# Define the documentation formats
 formats:
   - html
   - pdf
+
+# Use the latest image (optional, can be removed if defaults are fine)
+build:
+  image: testing
+
+# Specify Python dependencies installation (if you have any)
+# python:
+#   install:
+#     - requirements: docs/requirements.txt
+#     - method: pip
+#       path: .
+
 
 
 
