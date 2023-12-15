@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "histeventexplorer_pkg"
+version = "0.1.0"
+description = "A Python package for retrieving and visualizing historical events with associated imagery"
+authors = ["Ruining Feng"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.25.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+matplotlib = "^3.4.2"
+
+[[tool.poetry.packages]]
+from = "src"
+include = "histeventexplorer_pkg"
+
+[tool.poetry.group.dev.dependencies]
+sphinx = "^7.2.6"
+sphinxcontrib-napoleon = "^0.7"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
