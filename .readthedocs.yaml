@@ -6,25 +6,13 @@ version: 2
 sphinx:
   configuration: docs/conf.py
 
-# Set the version of Python
+# Python settings
 python:
   version: 3.11
 
-# Define the documentation formats
-formats:
-  - html
-  - pdf
-
-# Use the latest image (optional, can be removed if defaults are fine)
+# Build process
 build:
   image: testing
-
-# Specify Python dependencies installation (if you have any)
-# python:
-#   install:
-#     - requirements: docs/requirements.txt
-#     - method: pip
-#       path: .
 
 
 
