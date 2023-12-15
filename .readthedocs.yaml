@@ -1,18 +1,14 @@
 # .readthedocs.yaml
-# Required
 version: 2
 
-# Build documentation with Sphinx
 sphinx:
   configuration: docs/conf.py
 
-# Python settings
 python:
   version: 3.11
 
-# Build process
 build:
-  image: testing
+  image: 'latest'  # Use 'latest' or 'stable'
 
 
 
