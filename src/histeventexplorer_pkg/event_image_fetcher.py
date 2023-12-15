@@ -1,4 +1,11 @@
+# Remember to replace these api keys with yours
+                
+api_key_hist_events = 'c7iW1X/NBQzSqGPB3dtMrg==23f1sq2apRjQlupn'
+api_key_serp = 'f5ac244fa02c5d4a5e353641550f68a99ec0569ae8b2440354d44e6c636b829d'
+
+
 import requests
+from IPython.display import Image, display
 
 def fetch_historical_events(api_key, year, month=None, day=None):
     """
@@ -15,7 +22,6 @@ def fetch_historical_events(api_key, year, month=None, day=None):
     except requests.exceptions.RequestException as e:
         print(f"Error fetching historical events: {e}")
         return []
-    
 
 def fetch_images_with_serpapi(query, api_key, num_images=1):
     """
@@ -37,10 +43,10 @@ def fetch_images_with_serpapi(query, api_key, num_images=1):
     except requests.exceptions.RequestException as e:
         print(f"Error fetching images: {e}")
         return []
-    
+
 def fetch_events_and_images(api_key_events, api_key_images, year, month=None, day=None, num_images=1):
     """
-    Fetch historical events and their related images.
+    Fetch historical events and their related images and display the images.
     """
     events = fetch_historical_events(api_key_events, year, month, day)
     if not events:
@@ -53,9 +59,9 @@ def fetch_events_and_images(api_key_events, api_key_images, year, month=None, da
         if description:
             image_urls = fetch_images_with_serpapi(description, api_key_images, num_images)
             for img_url in image_urls:
-                print(f"Image URL: {img_url}")
+                display(Image(url=img_url))
 
-# Example Usage
-api_key_hist_events = 'c7iW1X/NBQzSqGPB3dtMrg==23f1sq2apRjQlupn'
-api_key_serp = 'f5ac244fa02c5d4a5e353641550f68a99ec0569ae8b2440354d44e6c636b829d'
-fetch_events_and_images(api_key_hist_events, api_key_serp, 1969)
+# Example usage (replace 'api_key_hist_events' and 'api_key_serp' with your actual API keys)
+# api_key_hist_events = 'your_api_key_for_historical_events'
+# api_key_serp = 'your_api_key_for_serpapi'
+# fetch_events_and_images(api_key_hist_events, api_key_serp, 1969)

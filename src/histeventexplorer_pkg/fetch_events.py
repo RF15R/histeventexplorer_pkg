@@ -31,9 +31,7 @@ def fetch_historical_events(api_key, text=None, year=None, month=None, day=None,
         print(f"Error fetching data from the API: {e}")
         return None
 
-# Example usage
-api_key = 'c7iW1X/NBQzSqGPB3dtMrg==23f1sq2apRjQlupn'  # Replace with your API key
-events = fetch_historical_events(api_key, text='moon landing', year=1969)
-print(events)
+
+
 
 

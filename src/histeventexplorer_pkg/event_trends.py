@@ -56,12 +56,6 @@ def fetch_historical_events(api_key, year):
         print(f"Error fetching data from the API: {e}")
         return None
 
-# Example usage
-api_key = 'c7iW1X/NBQzSqGPB3dtMrg==23f1sq2apRjQlupn'  # Replace with your API key
-event_types = ['war', 'invention']
-event_counts = analyze_event_types_over_time(api_key, 1800, 1900, event_types)
-print(event_counts)
-
 
 def analyze_event_patterns(api_key, start_year, end_year, keyword):
     """
@@ -97,12 +91,6 @@ def analyze_event_patterns(api_key, start_year, end_year, keyword):
     plt.show()
 
     return keyword_counts
-
-# Example usage
-api_key = 'c7iW1X/NBQzSqGPB3dtMrg==23f1sq2apRjQlupn'  # Replace with your API key
-keyword = 'revolution'
-pattern = analyze_event_patterns(api_key, 1800, 1900, keyword)
-print(pattern)
 
 
 
@@ -144,11 +132,6 @@ def analyze_event_density(api_key, start_year, end_year, interval):
 
     return event_density
 
-# Example usage
-api_key = 'c7iW1X/NBQzSqGPB3dtMrg==23f1sq2apRjQlupn'  # Replace with your API key
-density = analyze_event_density(api_key, 1800, 1900, 10)
-print(density)
-
 
 def analyze_event_density(api_key, start_year, end_year, interval, event_types):
     """
@@ -164,6 +147,19 @@ def analyze_event_density(api_key, start_year, end_year, interval, event_types):
 
     Returns:
     dict: A dictionary with time intervals as keys and dictionaries of event type counts as values.
+
+    Example:
+    >>> api_key = 'YOUR_API_KEY'  # Replace with your actual API key
+    >>> start_year = 1800
+    >>> end_year = 1900
+    >>> interval = 10
+    >>> event_types = ['war', 'invention', 'discovery']
+    >>> event_density = analyze_event_density(api_key, start_year, end_year, interval, event_types)
+    >>> for period, counts in event_density.items():
+    ...     print(f"{period}: {counts}")
+    1800-1809: {'war': 2, 'invention': 5, 'discovery': 1}
+    1810-1819: {'war': 3, 'invention': 2, 'discovery': 0}
+    ... # and so on for each interval
     """
     event_density = {}
 
@@ -184,9 +180,3 @@ def analyze_event_density(api_key, start_year, end_year, interval, event_types):
                             event_density[f"{period_start}-{period_end - 1}"][event_type] += 1
 
     return event_density
-
-# Example usage
-api_key = 'c7iW1X/NBQzSqGPB3dtMrg==23f1sq2apRjQlupn' # Replace with yours
-event_types = ['war', 'revolution']
-density = analyze_event_density(api_key, 1800, 1900, 10, event_types)
-print(density)
