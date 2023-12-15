@@ -14,19 +14,10 @@ sphinx:
 python:
   version: 3.11
 
-# Optionally define how Read the Docs will install your project
-# python:
-#   install:
-#     - requirements: docs/requirements.txt
-
-# Declare the formats of your documentation
 formats:
   - html
   - pdf
 
-# Configure the build process
-build:
-  # Omit the `os` configuration, it's not needed here
-  image: latest  # Use the latest build image for the most up-to-date tools
+
 
 
